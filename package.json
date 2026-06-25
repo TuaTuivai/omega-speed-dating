@@ -1,0 +1,8 @@
+{
+  "name": "omega-speed-dating-root",
+  "private": true,
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ]
+}

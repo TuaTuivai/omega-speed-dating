@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Omega Speed Dating</title>
+    <link rel="stylesheet" href="./src/style.css" />
+  </head>
+  <body>
+    
+    <div id="lobby-screen" class="container">
+      <div class="header">
+        <h1>Omega Dating</h1>
+        <p>Omegle-Inspired Speed Roulette</p>
+      </div>
+      <div id="status-box" class="status disconnected">Connecting to server...</div>
+      <button id="action-btn" class="btn btn-primary" disabled>Find a Match ⚡</button>
+    </div>
+
+    <div id="chat-screen" class="container hidden">
+      
+      <div id="timer" class="timer-banner">⏱️ 02:00</div>
+      
+      <div id="message-box" class="chat-box"></div>
+      
+      <div class="control-row">
+        <button id="skip-btn" class="btn btn-skip">➡️ Skip</button>
+      </div>
+      
+      <div class="input-row">
+        <input id="chat-input" class="input-field" type="text" placeholder="Type a message..." autocomplete="off" />
+        <button id="send-btn" class="btn btn-send">Send</button>
+      </div>
+
+    </div>
+
+    <script type="module" src="./src/main.js"></script>
+  </body>
+</html>

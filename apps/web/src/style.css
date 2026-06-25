@@ -1,0 +1,214 @@
+/* Base Reset & Theme */
+body {
+  font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  background: radial-gradient(circle at center, #1e122b 0%, #0c0714 100%);
+  color: #f3f4f6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  overflow: hidden;
+}
+
+/* Glassmorphic Container Core */
+.container {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 24px;
+  padding: 30px;
+  width: 380px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+  box-sizing: border-box;
+}
+
+/* Specific Screen Dimensions */
+#chat-screen {
+  height: 600px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.hidden {
+  display: none !important;
+}
+
+/* Typography & Headers */
+h1 {
+  background: linear-gradient(45deg, #ff4757, #ff6b81);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin: 0 0 8px 0;
+  font-size: 32px;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+}
+
+p {
+  color: #9ca3af;
+  margin: 0 0 25px 0;
+  font-size: 15px;
+}
+
+/* Server Status Badge */
+.status {
+  font-weight: 600;
+  margin-bottom: 25px;
+  padding: 14px;
+  border-radius: 12px;
+  font-size: 14px;
+  letter-spacing: 0.3px;
+  text-align: center;
+}
+.connected {
+  color: #10b981;
+  border: 1px solid rgba(16, 185, 129, 0.2);
+  background: rgba(16, 185, 129, 0.06);
+}
+.disconnected {
+  color: #ef4444;
+  border: 1px solid rgba(239, 68, 68, 0.2);
+  background: rgba(239, 68, 68, 0.06);
+}
+
+/* Global Button Archetype */
+.btn {
+  font-weight: 700;
+  border: none;
+  border-radius: 14px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 15px;
+  box-sizing: border-box;
+}
+.btn:disabled {
+  background: #1f1a24 !important;
+  color: #4b5563 !important;
+  cursor: not-allowed;
+  border: 1px solid #374151;
+  box-shadow: none !important;
+}
+
+/* Button Variants */
+.btn-primary {
+  background: linear-gradient(135deg, #ff4757 0%, #e84118 100%);
+  color: white;
+  padding: 16px;
+  width: 100%;
+  box-shadow: 0 8px 20px rgba(255, 71, 87, 0.3);
+}
+.btn-primary:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 24px rgba(255, 71, 87, 0.4);
+}
+
+/* Dynamic Rows & Alignment Fixes */
+.control-row, .input-row {
+  display: flex;
+  gap: 10px;
+  width: 100%;
+}
+
+/* Match Control Buttons (Like & Skip) */
+.control-row .btn {
+  flex: 1; /* Automatically forces buttons inside to split 50/50 evenly */
+  padding: 14px;
+}
+.btn-skip {
+  background: rgba(255, 255, 255, 0.05);
+  color: #ff4757;
+  border: 1px solid rgba(255, 71, 87, 0.3);
+}
+.btn-skip:hover {
+  background: rgba(255, 71, 87, 0.1);
+}
+.btn-like {
+  background: linear-gradient(135deg, #2ed573 0%, #20bf6b 100%);
+  color: white;
+  box-shadow: 0 4px 12px rgba(46, 213, 115, 0.2);
+}
+.btn-like:hover {
+  transform: translateY(-1px);
+}
+
+/* Messaging Inputs */
+.input-row input {
+  flex: 1;
+  background: rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 14px;
+  border-radius: 14px;
+  color: white;
+  outline: none;
+  font-size: 14px;
+  transition: border-color 0.2s;
+}
+.input-row input:focus {
+  border-color: rgba(255, 71, 87, 0.5);
+}
+.btn-send {
+  background: #ff4757;
+  color: white;
+  padding: 0 22px;
+}
+
+/* Chat Canvas & Banners */
+.timer-banner {
+  background: rgba(255, 71, 87, 0.1);
+  border: 1px solid rgba(255, 71, 87, 0.2);
+  color: #ff4757;
+  padding: 8px;
+  border-radius: 12px;
+  text-align: center;
+  font-weight: 700;
+  font-family: monospace;
+  font-size: 16px;
+}
+
+.chat-box {
+  flex: 1;
+  background: rgba(0, 0, 0, 0.15);
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  padding: 15px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Bubble Text Variants */
+.msg {
+  padding: 10px 14px;
+  border-radius: 14px;
+  max-width: 75%;
+  font-size: 14px;
+  line-height: 1.4;
+  word-break: break-word;
+}
+.msg.me {
+  background: #ff4757;
+  color: white;
+  align-self: flex-end;
+  border-bottom-right-radius: 4px;
+}
+.msg.them {
+  background: rgba(255, 255, 255, 0.08);
+  color: white;
+  align-self: flex-start;
+  border-bottom-left-radius: 4px;
+}
+.msg.system {
+  background: transparent;
+  color: #9ca3af;
+  align-self: center;
+  font-style: italic;
+  font-size: 12px;
+  text-align: center;
+}
